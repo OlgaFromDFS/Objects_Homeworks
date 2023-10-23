@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta content="text/html; charset=utf-8">
+    <title>sum_of_objects</title>
+</head>
+<body>
+    <script>
+        // Аргумент1: { cool: 'yes', value: 5 }
+        // Аргумент2: { cool: 'no', result: 15 }
+        // Результат: { cool: 'yesno', value: 5, result: 15 }
+
+        // Аргумент1: { cool: 'yes', value: 5 }
+        // Аргумент2: { text: 'no', value: 15 }
+        // Результат: { cool: 'yes', text: 'no', value: 20 }
+
+        const objectOne = { cool: 'yes', value: 5 };
+        const objectTwo = { cool: 'no', result: 15 };
+
+        const transformation = function(argumentOne, argumentTwo) {
+            for (const valueOne in argumentOne) {
+                console.log(valueOne);
+
+                const keysTwo = Object.keys(argumentTwo);
+
+                if(valueOne === argumentTwo[keysTwo[1]]) {
+                newObject = { valueOne: [argumentOne.valueOne] + [argumentTwo.valueTwo] };
+                };
+
+                if(valueOne !== valueTwo) {
+                newObject = { valueOne: [argumentOne.valueOne], valueTwo: [argumentTwo.valueTwo] };
+                };
+            };
+
+        return newObject;
+        }
+
+        console.log(transformation(objectOne, objectTwo));
+    </script>
+</body>
+</html>

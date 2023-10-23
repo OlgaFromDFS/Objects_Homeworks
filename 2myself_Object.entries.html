@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta content="text/html; charset=utf-8">
+    <title>myself_Object.entries</title>
+</head>
+<body>
+    <script>
+        const user = { name: 'dusty', age: 39 };
+
+        function createAnArray(object) {
+            let mainArray = [];
+
+            for (const key in object) {
+                mainArray.push([key, object[key]]);
+            };
+
+            return mainArray;
+        };
+
+        console.log(createAnArray(user));
+    </script>
+</body>
+</html>

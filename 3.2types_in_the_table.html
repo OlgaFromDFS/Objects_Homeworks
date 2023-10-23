@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta content="text/html; charset=utf-8">
+    <title>types_in_the_table</title>
+</head>
+<body>
+    <script>
+        // Задание:
+        // const list = { test: 134 };
+        // Результат: { number: 1 }
+
+        // const list = { test: 'hello' };
+        // Результат: { string: 1 }
+
+        // const list = { test: undefined, anotherField: [], yetAnother: [undefined] };
+        // Результат: { undefined: 1, array: 2 }
+
+        const list = { test: undefined, anotherField: [], undefined: null, 1: undefined, 2: [], yetAnother: [undefined] };
+        // Результат: { undefined: 1, array: 1, null: 1 }
+        
+        function createNewObject(object) {
+            const values = Object.values(object); // values = [undefined, Array(0), null]
+            const newObjectFromTypeAndQuantity = {};
+
+            for (const value of values) {
+                let type = typeof value;
+
+                if (value === null) {
+                    type = 'null';
+                }
+
+                if (Array.isArray(value)) {
+                    type = 'array';
+                }
+
+                if (newObjectFromTypeAndQuantity[type]) {
+                    newObjectFromTypeAndQuantity[type] += 1;
+                } else {
+                    newObjectFromTypeAndQuantity[type] = 1;
+                }
+            }
+            
+            return newObjectFromTypeAndQuantity;
+        };
+
+        console.log(createNewObject(list));
+    </script>
+</body>
+</html>
