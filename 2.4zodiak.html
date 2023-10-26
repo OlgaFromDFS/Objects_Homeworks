@@ -14,40 +14,19 @@
 
         const object = { a: 'ololo' };
 
+        let result = arr.reduce((summKey, item) => summKey + item, 0);
+
         function identifyTheZodiacSign(arg) {
             zodiacSigns = ['водолей', 'рыбы', 'овен', 'телец', 'близнецы', 'рак', 'лев', 'дева', 'весы', 'скорпион', 'стрелец', 'козерог'];
 
             const arrayOfKey = Object.keys(arg); //['a']
 
-            let summKey = arrayOfKey.reduce(function(accumulator, item, index, array) {
-            // ...
-            }, [initial]);
+            result(arrayOfKey);
 
-            return ;
+            return result;
         }
 
         console.log(identifyTheZodiacSign(object));
-
-
-        // const firstObject = { cool: 'yes', value: 5 };
-        // const secondObject = { text: 'no', value: 15 };
-
-        // function summObjects (first, second) {
-        //     const result = { ...second };
-
-        //     for (const key in first) {
-               
-        //         if(result[key]) {
-        //             result[key] = result[key] + first[key];
-        //         } else {
-        //             result[key] = first[key];
-        //         }
-        //     }
-
-        //     return result;
-        // }
-
-        // console.log(summObjects(firstObject, secondObject));
     </script>
 </body>
 </html>
