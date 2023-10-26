@@ -16,7 +16,7 @@
         // const list = { test: undefined, anotherField: [], yetAnother: [undefined] };
         // Результат: { undefined: 1, array: 2 }
 
-        const list = { test: undefined, anotherField: [], undefined: null, 1: undefined, 2: [], yetAnother: [undefined] };
+        const list = { test: undefined, anotherField: [], undefined: null, 1: undefined, 2: [], 3: [undefined] };
         // Результат: { undefined: 1, array: 1, null: 1 }
         
         function createNewObject(object) {
@@ -35,9 +35,11 @@
                 }
 
                 if (newObjectFromTypeAndQuantity[type]) {
+                    console.log([type], newObjectFromTypeAndQuantity[type] += 1, '1');
                     newObjectFromTypeAndQuantity[type] += 1;
                 } else {
                     newObjectFromTypeAndQuantity[type] = 1;
+                    console.log([type], newObjectFromTypeAndQuantity[type] = 1, '3');
                 }
             }
             
