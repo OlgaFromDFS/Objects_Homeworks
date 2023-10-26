@@ -17,12 +17,12 @@
         function identifyTheZodiacSign(arg) {
             zodiacSigns = ['водолей', 'рыбы', 'овен', 'телец', 'близнецы', 'рак', 'лев', 'дева', 'весы', 'скорпион', 'стрелец', 'козерог'];
 
-            const arrayOfKey = Object.keys(arg);
+            const arrayOfKeys = Object.keys(arg);
 
-            let getSummKey = arrayOfKey.reduce((summKey, item) => summKey + item);
+            let getSummKeys = arrayOfKeys.reduce((summKeys, item) => summKeys + item);
 
             for (let i = 0; i < 11; i++) {
-                if (getSummKey.length % 12 === i) {
+                if (getSummKeys.length % 12 === i) {
                     return zodiacSigns[i];
                 }
             }
