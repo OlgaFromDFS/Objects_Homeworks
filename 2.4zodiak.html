@@ -9,21 +9,23 @@
         // Аргумент: { a: 'ololo' }
         // Результат: Рыбы (так как сумма длин имен полей равна 1)
 
-        // Аргумент: { a: 'ololo', b: undefined, '1234567890': 1234567890 }
+        // Аргумент: { a: 'ololo', b: undefined, '1234567890': 1234567890, dffs: 'dd', ccfv: 'mm' }
         // Результат: Водолей
 
-        const object = { a: 'ololo' };
-
-        let result = arr.reduce((summKey, item) => summKey + item, 0);
+        const object = { a: 'ololo', b: undefined, '1234567890': 1234567890, dffs: 'dd', ccfv: 'mm' };
 
         function identifyTheZodiacSign(arg) {
             zodiacSigns = ['водолей', 'рыбы', 'овен', 'телец', 'близнецы', 'рак', 'лев', 'дева', 'весы', 'скорпион', 'стрелец', 'козерог'];
 
-            const arrayOfKey = Object.keys(arg); //['a']
+            const arrayOfKey = Object.keys(arg);
 
-            result(arrayOfKey);
+            let getSummKey = arrayOfKey.reduce((summKey, item) => summKey + item);
 
-            return result;
+            for (let i = 0; i < 11; i++) {
+                if (getSummKey.length % 12 === i) {
+                    return zodiacSigns[i];
+                }
+            }
         }
 
         console.log(identifyTheZodiacSign(object));
